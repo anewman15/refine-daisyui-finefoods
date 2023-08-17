@@ -11,11 +11,11 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Layout } from "./components/layout";
 import {
-  BlogPostCreate,
-  BlogPostEdit,
-  BlogPostList,
-  BlogPostShow,
-} from "./pages/blog-posts";
+  ProductCreate,
+  ProductEdit,
+  ProductList,
+  ProductShow,
+} from "./pages/products";
 import {
   CategoryCreate,
   CategoryEdit,
@@ -33,11 +33,11 @@ function App() {
           routerProvider={routerBindings}
           resources={[
             {
-              name: "blog_posts",
-              list: "/blog-posts",
-              create: "/blog-posts/create",
-              edit: "/blog-posts/edit/:id",
-              show: "/blog-posts/show/:id",
+              name: "products",
+              list: "/products",
+              create: "/products/create",
+              edit: "/products/edit/:id",
+              show: "/products/show/:id",
               meta: {
                 canDelete: true,
               },
@@ -69,13 +69,13 @@ function App() {
             >
               <Route
                 index
-                element={<NavigateToResource resource="blog_posts" />}
+                element={<NavigateToResource resource="products" />}
               />
-              <Route path="/blog-posts">
-                <Route index element={<BlogPostList />} />
-                <Route path="create" element={<BlogPostCreate />} />
-                <Route path="edit/:id" element={<BlogPostEdit />} />
-                <Route path="show/:id" element={<BlogPostShow />} />
+              <Route path="/products">
+                <Route index element={<ProductList />} />
+                <Route path="create" element={<ProductCreate />} />
+                <Route path="edit/:id" element={<ProductEdit />} />
+                <Route path="show/:id" element={<ProductShow />} />
               </Route>
               <Route path="/categories">
                 <Route index element={<CategoryList />} />
